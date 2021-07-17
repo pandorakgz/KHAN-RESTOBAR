@@ -1,0 +1,45 @@
+<table class='table table-hover'>
+    <tr>
+        <td>id</td>
+        <td style='width: 20%;'>Названиие</td>
+        <td>Изображение</td>
+        <td>Количество</td>
+        <td>Цена</td>
+        <td>Сумма</td>
+        <td>Действие</td>
+    </tr>
+    <tr>
+        {% for food in card_foods %}
+        <tr>
+            <td>
+                {{food.id}}
+            </td>
+
+            <td>
+                {{ food.name }}
+            </td>
+            <td>
+                <img src="{{ food.image.url }}" class='card-img-top' style="height: 100px; width: 120px;" >
+            </td>
+            <td>
+                {{food.count}}
+            </td>
+            <td>
+                {{ food.sale_price|floatformat }} сом
+            </td>
+            <td>
+                {{ food.sum|floatformat }} сом
+
+            </td>
+            <td>
+                <a class='btn btn-primary' href="/eda/card/add/{{food.id}}?prev={{ request.path|urlencode }}">+</a>
+                <a class='btn btn-primary' href="/eda/card/del/{{food.id}}?prev={{ request.path|urlencode }}">-</a>
+                <a class='btn btn-primary' href="/eda/card/remove/{{food.id}}?prev={{ request.path|urlencode }}"><img src="/static/images/pp1.png" width="25"></a>
+            </td>
+        </tr>
+            
+
+
+        {% endfor %}
+    </tr>
+</table>

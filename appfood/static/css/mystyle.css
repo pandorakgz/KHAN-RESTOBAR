@@ -1,0 +1,12 @@
+.food-sale-price {
+    color:red;
+    font-weight: bolder;
+}
+
+.footer {
+    margin-top: 100px;
+    height: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
